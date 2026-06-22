@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A love story told through scrolling — every second counts.">
+    <title>Our Love Story 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation Dots -->
+    <nav class="nav-dots" id="navDots">
+        <div class="nav-dot active" data-section="0" title="Home"></div>
+        <div class="nav-dot" data-section="1" title="The Beginning"></div>
+        <div class="nav-dot" data-section="2" title="First Spark"></div>
+        <div class="nav-dot" data-section="3" title="Falling in Love"></div>
+        <div class="nav-dot" data-section="4" title="Growing Together"></div>
+        <div class="nav-dot" data-section="5" title="Our Adventures"></div>
+        <div class="nav-dot" data-section="6" title="Forever"></div>
+    </nav>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="section hero-section" id="section-0">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle fade-in">This is</div>
+            <h1 class="hero-title fade-in">Our Love Story</h1>
+            <div class="hero-heart-divider fade-in">
+                <span class="divider-line"></span>
+                <span class="heart-icon">♥</span>
+                <span class="divider-line"></span>
+            </div>
+            <p class="hero-tagline fade-in">Every second with you is a moment I treasure</p>
+            
+            <!-- Live Counter -->
+            <div class="counter-container fade-in" id="counterContainer">
+                <div class="counter-label">We've been in love for</div>
+                <div class="counter-grid">
+                    <div class="counter-item">
+                        <span class="counter-value" id="days">188</span>
+                        <span class="counter-unit">Days</span>
+                    </div>
+                    <div class="counter-separator">:</div>
+                    <div class="counter-item">
+                        <span class="counter-value" id="hours">02</span>
+                        <span class="counter-unit">Hours</span>
+                    </div>
+                    <div class="counter-separator">:</div>
+                    <div class="counter-item">
+                        <span class="counter-value" id="minutes">21</span>
+                        <span class="counter-unit">Minutes</span>
+                    </div>
+                    <div class="counter-separator">:</div>
+                    <div class="counter-item">
+                        <span class="counter-value" id="seconds">50</span>
+                        <span class="counter-unit">Seconds</span>
+                    </div>
+                </div>
+                <div class="counter-since">Since December 16, 2025</div>
+            </div>
+
+            <div class="scroll-indicator fade-in" id="scrollIndicator">
+                <span>Scroll to read our story</span>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CHAPTER 1: THE BEGINNING ===================== -->
+    <section class="section story-section" id="section-1">
+        <div class="section-bg" style="background: linear-gradient(135deg, #0a0015 0%, #1a0030 50%, #0d1b3e 100%);"></div>
+        <div class="story-container">
+            <div class="chapter-number slide-left">Chapter I</div>
+            <h2 class="story-title slide-left">The Beginning</h2>
+            <div class="story-content">
+                <div class="story-image-wrapper slide-right">
+                    <div class="image-frame">
+                        <img src="images/chapter_beginning.png" alt="The night we met" class="story-image" loading="lazy">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="story-text slide-left">
+                    <p class="story-quote">"Some souls just understand each other upon meeting."</p>
+                    <p>It was a cold December night when our paths crossed — December 16, 2025. The kind of night where the universe seems to hold its breath, knowing something beautiful is about to begin.</p>
+                    <p>Maybe it was the way you smiled, or the way your eyes lit up when you laughed. Whatever it was, something deep inside me whispered: <em>"Pay attention. This one is special."</em></p>
+                    <p>And just like that, my world changed forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CHAPTER 2: THE FIRST SPARK ===================== -->
+    <section class="section story-section" id="section-2">
+        <div class="section-bg" style="background: linear-gradient(135deg, #1a0030 0%, #2d1045 50%, #3d1155 100%);"></div>
+        <div class="story-container">
+            <div class="chapter-number slide-right">Chapter II</div>
+            <h2 class="story-title slide-right">The First Spark</h2>
+            <div class="story-content reverse">
+                <div class="story-image-wrapper slide-left">
+                    <div class="image-frame">
+                        <img src="images/chapter_first_spark.png" alt="The first spark between us" class="story-image" loading="lazy">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="story-text slide-right">
+                    <p class="story-quote">"In a room full of people, my eyes will always search for you."</p>
+                    <p>The first conversations felt like coming home to a place I'd never been. Every word, every laugh, every stolen glance — they all carried a warmth I'd never felt before.</p>
+                    <p>My heart started beating in a rhythm it had never known. Not faster, but <em>fuller</em> — like it finally understood what it had been waiting for all this time.</p>
+                    <p>That spark between us? It wasn't just a flame. It was a whole galaxy igniting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CHAPTER 3: FALLING IN LOVE ===================== -->
+    <section class="section story-section" id="section-3">
+        <div class="section-bg" style="background: linear-gradient(135deg, #2d1045 0%, #4a1942 50%, #1a0030 100%);"></div>
+        <div class="story-container">
+            <div class="chapter-number slide-left">Chapter III</div>
+            <h2 class="story-title slide-left">Falling in Love</h2>
+            <div class="story-content">
+                <div class="story-image-wrapper slide-right">
+                    <div class="image-frame">
+                        <img src="images/chapter_falling_love.png" alt="Falling deeply in love" class="story-image" loading="lazy">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="story-text slide-left">
+                    <p class="story-quote">"I didn't fall in love with you. I walked into love with you, with my eyes wide open."</p>
+                    <p>Falling for you wasn't like falling at all. It was like floating — weightless and infinite, carried by something bigger than both of us.</p>
+                    <p>Every good morning text became the sunrise I looked forward to. Every goodnight became a promise that tomorrow would bring us closer.</p>
+                    <p>You became my favorite notification, my best thought, and the reason behind my most genuine smiles. <em>Loving you was the easiest thing I've ever done.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CHAPTER 4: GROWING TOGETHER ===================== -->
+    <section class="section story-section" id="section-4">
+        <div class="section-bg" style="background: linear-gradient(135deg, #0d1b3e 0%, #1a3a2a 50%, #2d4a1a 100%);"></div>
+        <div class="story-container">
+            <div class="chapter-number slide-right">Chapter IV</div>
+            <h2 class="story-title slide-right">Growing Together</h2>
+            <div class="story-content reverse">
+                <div class="story-image-wrapper slide-left">
+                    <div class="image-frame">
+                        <img src="images/chapter_growing.png" alt="Growing together" class="story-image" loading="lazy">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="story-text slide-right">
+                    <p class="story-quote">"Love doesn't just sit there, like a stone. It has to be made, like bread; remade all the time, made new."</p>
+                    <p>We learned that love isn't just about the butterflies — it's about choosing each other, even on the hard days. Especially on the hard days.</p>
+                    <p>We grew together like two trees whose roots intertwined underground — individual, yet inseparable. Your strength became my shelter, and my dreams became your motivation.</p>
+                    <p>Every challenge we faced only proved that <em>together, we are unstoppable.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CHAPTER 5: OUR ADVENTURES ===================== -->
+    <section class="section story-section" id="section-5">
+        <div class="section-bg" style="background: linear-gradient(135deg, #2d1045 0%, #4a2010 50%, #3d1155 100%);"></div>
+        <div class="story-container">
+            <div class="chapter-number slide-left">Chapter V</div>
+            <h2 class="story-title slide-left">Our Adventures</h2>
+            <div class="story-content">
+                <div class="story-image-wrapper slide-right">
+                    <div class="image-frame">
+                        <img src="images/chapter_adventures.png" alt="Our adventures together" class="story-image" loading="lazy">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="story-text slide-left">
+                    <p class="story-quote">"With you, even the ordinary feels extraordinary."</p>
+                    <p>It's not about the grand gestures or the picture-perfect moments. It's the late-night talks that stretch into dawn. The comfortable silence. The inside jokes that make no sense to anyone else.</p>
+                    <p>Every day with you is an adventure — whether we're exploring the world or just sitting together doing absolutely nothing. Because with you, <em>nothing</em> becomes <em>everything.</em></p>
+                    <p>You turned my everyday life into the greatest adventure story ever told.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CHAPTER 6: FOREVER ===================== -->
+    <section class="section story-section final-section" id="section-6">
+        <div class="section-bg" style="background: linear-gradient(135deg, #0a0015 0%, #1a0040 30%, #2d1060 60%, #0a0015 100%);"></div>
+        <div class="story-container">
+            <div class="chapter-number slide-left">Forever</div>
+            <h2 class="story-title slide-left">& Counting</h2>
+            <div class="story-content final-content">
+                <div class="story-image-wrapper slide-up">
+                    <div class="image-frame final-frame">
+                        <img src="images/chapter_forever.png" alt="Forever and always" class="story-image" loading="lazy">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="story-text slide-up final-text">
+                    <p class="story-quote final-quote">"I loved you yesterday. I love you today. I'll love you tomorrow. And every day after that."</p>
+                    <p>188 days might seem like just a number, but every single second of those days has been painted with your love. And as this counter keeps ticking...</p>
+                    
+                    <!-- Mini Counter -->
+                    <div class="mini-counter">
+                        <span class="mini-counter-value" id="miniDays">188</span>d
+                        <span class="mini-counter-value" id="miniHours">02</span>h
+                        <span class="mini-counter-value" id="miniMinutes">21</span>m
+                        <span class="mini-counter-value" id="miniSeconds">50</span>s
+                    </div>
+                    
+                    <p>...know that every tick is a heartbeat dedicated to you. Every second is a whisper that says <em>"I choose you."</em></p>
+                    <p class="final-declaration">This is not just our story so far.<br>This is the beginning of forever. 💕</p>
+                    
+                    <div class="final-signature">
+                        <span class="signature-text">With all my love,</span>
+                        <span class="signature-heart">♥</span>
+                        <span class="signature-text">Forever yours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Background Music Toggle -->
+    <button class="music-toggle" id="musicToggle" title="Toggle Music">
+        <svg class="music-icon" viewBox="0 0 24 24" width="20" height="20">
+            <path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
