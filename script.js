@@ -33,21 +33,44 @@ const backToTop = document.getElementById('backToTop');
    LOADING SCREEN & INITIAL ANIMATIONS
    ======================================================== */
 window.addEventListener('DOMContentLoaded', () => {
-    // Custom simulated progress for a premium loader feel
-    const fillEl = document.querySelector('.loader-bar-fill');
+    const fillEl = document.getElementById('loaderBarFill');
+    const percentEl = document.getElementById('loaderPercentage');
+    const messageEl = document.getElementById('loaderMessage');
+    
+    const messages = [
+        "Unfolding our memories...",
+        "Tuning the stars...",
+        "Counting 188 days of smiles...",
+        "Polishing the sunset paths...",
+        "Preparing forever..."
+    ];
+    
     let progress = 0;
+    
     const interval = setInterval(() => {
-        progress += Math.random() * 15;
+        progress += Math.floor(Math.random() * 8) + 4;
+        
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
+            
+            if (percentEl) percentEl.textContent = "100%";
+            if (fillEl) fillEl.style.width = "100%";
+            if (messageEl) messageEl.textContent = "Welcome to our story ♡";
+            
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
-                setTimeout(startHeroAnimations, 400);
-            }, 500);
+                setTimeout(startHeroAnimations, 800);
+            }, 800);
+        } else {
+            if (percentEl) percentEl.textContent = `${progress}%`;
+            if (fillEl) fillEl.style.width = `${progress}%`;
+            
+            // Switch messages based on progress
+            const msgIndex = Math.min(messages.length - 1, Math.floor(progress / 20));
+            if (messageEl) messageEl.textContent = messages[msgIndex];
         }
-        if (fillEl) fillEl.style.width = progress + '%';
-    }, 200);
+    }, 120);
 });
 
 function startHeroAnimations() {
@@ -513,22 +536,49 @@ navDots.forEach(dot => {
 window.addEventListener('scroll', handleScrollEffects, { passive: true });
 
 /* ========================================================
-   SCROLL REVEAL ANIMATIONS
-   ======================================================= */
+   SCROLL REVEAL ANIMATIONS & BREAKOUT INTERACTIONS
+   ======================================================== */
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // Unobserve if we only want it to animate once
+            // Check if it's an image wrapper to add custom scroll active state
+            if (entry.target.classList.contains('story-image-wrapper')) {
+                entry.target.dataset.active = "true";
+            }
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.15 });
+}, { threshold: 0.1 });
 
 // Elements to observe
-document.querySelectorAll('.fade-in, .slide-left, .slide-right, .slide-up, .story-text, .reveal-text, .glowing-text, .hero-subtitle, .hero-heart-divider').forEach(el => {
+document.querySelectorAll('.fade-in, .slide-left, .slide-right, .slide-up, .story-text, .reveal-text, .glowing-text, .hero-subtitle, .hero-heart-divider, .story-image-wrapper').forEach(el => {
     revealObserver.observe(el);
 });
+
+// Dynamic image breakout parallax shift on scroll
+function handleImageBreakoutShift() {
+    document.querySelectorAll('.story-image-wrapper[data-active="true"]').forEach(wrapper => {
+        const rect = wrapper.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+        // Calculate vertical progress relative to viewport center
+        const progress = (rect.top + rect.height / 2 - viewHeight / 2) / (viewHeight / 2);
+        
+        // Softly slide up/down relative to scroll depth
+        const translateY = Math.max(-50, Math.min(50, progress * -35));
+        
+        // Softly shift horizontally depending on breakout side
+        let translateX = 0;
+        if (wrapper.classList.contains('breakout-image-left')) {
+            translateX = -110 + Math.max(-20, Math.min(20, progress * -15));
+        } else if (wrapper.classList.contains('breakout-image-right')) {
+            translateX = 110 + Math.max(-20, Math.min(20, progress * 15));
+        }
+        
+        wrapper.style.transform = `translateX(${translateX}px) translateY(${translateY}px) scale(1.04)`;
+    });
+}
+window.addEventListener('scroll', handleImageBreakoutShift, { passive: true });
 
 /* ========================================================
    CONFETTI EXPLOSION (Final Section)
