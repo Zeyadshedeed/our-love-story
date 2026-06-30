@@ -7,138 +7,179 @@
     <title>Our Love Story 💕</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ====== LOADING SCREEN ====== -->
+    <!-- LOADING SCREEN -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="loader-heart-wrap">
-            <svg class="loader-heart-svg" viewBox="0 0 100 100" width="80" height="80">
-                <path class="loader-heart-path" d="M50 88 C25 65, 5 50, 5 30 A20 20 0 0 1 50 20 A20 20 0 0 1 95 30 C95 50, 75 65, 50 88Z" fill="none" stroke="var(--color-primary)" stroke-width="2"/>
-            </svg>
-            <div class="loader-text">Loading our story...</div>
+        <div class="loader-content">
+            <div class="loader-rings">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+            </div>
+            <div class="loader-3d-heart" id="loader3dHeart">
+                <div class="heart-3d-face front">♥</div>
+                <div class="heart-3d-face back">♥</div>
+            </div>
+            <div class="loader-text-wrap">
+                <div class="loader-text">Loading our love story</div>
+                <div class="loader-dots"><span>.</span><span>.</span><span>.</span></div>
+            </div>
             <div class="loader-bar"><div class="loader-bar-fill"></div></div>
         </div>
     </div>
 
-    <!-- ====== CONSTELLATION CANVAS ====== -->
+    <!-- GRAIN OVERLAY -->
+    <div class="grain-overlay"></div>
+
+    <!-- CONSTELLATION CANVAS -->
     <canvas class="constellation-canvas" id="constellationCanvas"></canvas>
 
-    <!-- ====== SHOOTING STARS ====== -->
+    <!-- SHOOTING STARS -->
     <div class="shooting-stars-container" id="shootingStars"></div>
 
-    <!-- Floating Hearts Background -->
+    <!-- FLOATING ELEMENTS -->
     <div class="hearts-container" id="heartsContainer"></div>
+    <div class="petals-container" id="petalsContainer"></div>
+    <div class="orbs-container" id="orbsContainer"></div>
 
-    <!-- Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress-track">
+        <div class="scroll-progress" id="scrollProgress"></div>
+        <div class="scroll-progress-glow" id="scrollProgressGlow"></div>
+    </div>
 
-    <!-- Navigation Dots -->
+    <!-- NAV DOTS -->
     <nav class="nav-dots" id="navDots">
-        <div class="nav-dot active" data-section="0" title="Home"></div>
-        <div class="nav-dot" data-section="1" title="The Beginning"></div>
-        <div class="nav-dot" data-section="2" title="First Spark"></div>
-        <div class="nav-dot" data-section="3" title="Falling in Love"></div>
-        <div class="nav-dot" data-section="4" title="Growing Together"></div>
-        <div class="nav-dot" data-section="5" title="Our Adventures"></div>
-        <div class="nav-dot" data-section="6" title="Forever"></div>
+        <div class="nav-dot active" data-section="0" title="Home"><span class="nav-dot-ring"></span></div>
+        <div class="nav-dot" data-section="1" title="The Beginning"><span class="nav-dot-ring"></span></div>
+        <div class="nav-dot" data-section="2" title="First Spark"><span class="nav-dot-ring"></span></div>
+        <div class="nav-dot" data-section="3" title="Falling in Love"><span class="nav-dot-ring"></span></div>
+        <div class="nav-dot" data-section="4" title="Growing Together"><span class="nav-dot-ring"></span></div>
+        <div class="nav-dot" data-section="5" title="Our Adventures"><span class="nav-dot-ring"></span></div>
+        <div class="nav-dot" data-section="6" title="Forever"><span class="nav-dot-ring"></span></div>
     </nav>
 
-    <!-- ===================== HERO SECTION ===================== -->
+    <!-- ===================== HERO ===================== -->
     <section class="section hero-section" id="section-0">
-        <div class="hero-bg-overlay"></div>
+        <div class="hero-gradient-mesh"></div>
+        <div class="aurora-wrap">
+            <div class="aurora aurora-1"></div>
+            <div class="aurora aurora-2"></div>
+            <div class="aurora aurora-3"></div>
+        </div>
         <div class="hero-particles" id="heroParticles"></div>
-        <div class="aurora-bg"></div>
         <div class="hero-content">
-            <div class="hero-subtitle fade-in">This is</div>
+            <div class="hero-badge fade-in">
+                <svg viewBox="0 0 120 120" class="hero-badge-svg">
+                    <circle cx="60" cy="60" r="55" fill="none" stroke="url(#roseGoldGrad)" stroke-width="1" stroke-dasharray="4 4"/>
+                    <defs><linearGradient id="roseGoldGrad"><stop offset="0%" stop-color="#e8a0bf"/><stop offset="100%" stop-color="#f7d794"/></linearGradient></defs>
+                </svg>
+                <span class="hero-badge-text">♥</span>
+            </div>
+            <div class="hero-subtitle fade-in"><span>T</span><span>h</span><span>i</span><span>s</span><span>&nbsp;</span><span>i</span><span>s</span></div>
             <h1 class="hero-title fade-in" id="heroTitle">
                 <span class="typewriter-text" id="typewriterText"></span>
-                <span class="typewriter-cursor">|</span>
+                <span class="typewriter-cursor"></span>
             </h1>
             <div class="hero-heart-divider fade-in">
-                <span class="divider-line"></span>
-                <span class="heart-icon">♥</span>
-                <span class="divider-line"></span>
+                <span class="divider-line left"></span>
+                <span class="heart-icon-wrap">
+                    <span class="heart-ring"></span>
+                    <span class="heart-icon">♥</span>
+                </span>
+                <span class="divider-line right"></span>
             </div>
-            <p class="hero-tagline fade-in">Every second with you is a moment I treasure</p>
+            <p class="hero-tagline fade-in">
+                <span class="tagline-word" style="--i:0">Every</span>
+                <span class="tagline-word" style="--i:1">second</span>
+                <span class="tagline-word" style="--i:2">with</span>
+                <span class="tagline-word" style="--i:3">you</span>
+                <span class="tagline-word" style="--i:4">is</span>
+                <span class="tagline-word" style="--i:5">a</span>
+                <span class="tagline-word" style="--i:6">moment</span>
+                <span class="tagline-word" style="--i:7">I</span>
+                <span class="tagline-word" style="--i:8">treasure</span>
+            </p>
             
-            <!-- Live Counter -->
+            <!-- COUNTER -->
             <div class="counter-container fade-in" id="counterContainer">
-                <div class="counter-label">We've been in love for</div>
-                <div class="counter-grid">
-                    <div class="counter-item">
-                        <div class="counter-flip-card">
-                            <span class="counter-value" id="days">196</span>
+                <div class="counter-glow-border"></div>
+                <div class="counter-inner">
+                    <div class="counter-label">We've been in love for</div>
+                    <div class="counter-grid">
+                        <div class="counter-item">
+                            <div class="counter-value-wrap"><span class="counter-value" id="days">196</span></div>
+                            <span class="counter-unit">Days</span>
                         </div>
-                        <span class="counter-unit">Days</span>
-                    </div>
-                    <div class="counter-separator">:</div>
-                    <div class="counter-item">
-                        <div class="counter-flip-card">
-                            <span class="counter-value" id="hours">02</span>
+                        <div class="counter-separator"><span></span></div>
+                        <div class="counter-item">
+                            <div class="counter-value-wrap"><span class="counter-value" id="hours">02</span></div>
+                            <span class="counter-unit">Hours</span>
                         </div>
-                        <span class="counter-unit">Hours</span>
-                    </div>
-                    <div class="counter-separator">:</div>
-                    <div class="counter-item">
-                        <div class="counter-flip-card">
-                            <span class="counter-value" id="minutes">21</span>
+                        <div class="counter-separator"><span></span></div>
+                        <div class="counter-item">
+                            <div class="counter-value-wrap"><span class="counter-value" id="minutes">24</span></div>
+                            <span class="counter-unit">Minutes</span>
                         </div>
-                        <span class="counter-unit">Minutes</span>
-                    </div>
-                    <div class="counter-separator">:</div>
-                    <div class="counter-item">
-                        <div class="counter-flip-card">
-                            <span class="counter-value" id="seconds">50</span>
+                        <div class="counter-separator"><span></span></div>
+                        <div class="counter-item">
+                            <div class="counter-value-wrap"><span class="counter-value" id="seconds">12</span></div>
+                            <span class="counter-unit">Seconds</span>
                         </div>
-                        <span class="counter-unit">Seconds</span>
                     </div>
+                    <div class="counter-since">Since December 16, 2025 ♡</div>
                 </div>
-                <div class="counter-since">Since December 16, 2025</div>
             </div>
 
-            <div class="scroll-indicator fade-in" id="scrollIndicator">
-                <span>Scroll to read our story</span>
-                <div class="scroll-mouse">
-                    <div class="scroll-mouse-wheel"></div>
-                </div>
-                <div class="scroll-arrows">
-                    <span class="scroll-arrow-item"></span>
-                    <span class="scroll-arrow-item"></span>
-                    <span class="scroll-arrow-item"></span>
+            <div class="scroll-indicator fade-in">
+                <div class="scroll-text">Scroll to read our story</div>
+                <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+                <div class="scroll-chevrons">
+                    <span class="chevron"></span>
+                    <span class="chevron"></span>
+                    <span class="chevron"></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== TRANSITION QUOTE 1 ====== -->
-    <div class="transition-quote" data-symbol="✦">
-        <p class="tq-text reveal-text">"And so, the story began..."</p>
+    <!-- TRANSITION 1 -->
+    <div class="transition-section" data-symbol="✦">
+        <div class="transition-line"></div>
+        <p class="transition-text reveal-text">"And so, the story began..."</p>
+        <div class="transition-line"></div>
     </div>
 
-    <!-- ===================== CHAPTER 1: THE BEGINNING ===================== -->
-    <section class="section story-section" id="section-1">
-        <div class="section-bg" style="background: linear-gradient(135deg, #0a0015 0%, #1a0030 50%, #0d1b3e 100%);"></div>
+    <!-- ===================== CHAPTER 1 ===================== -->
+    <section class="section story-section" id="section-1" data-accent="210, 140, 255">
+        <div class="section-bg" style="background: linear-gradient(160deg, #0B0B2B 0%, #1a103a 40%, #12082a 100%);"></div>
         <div class="section-particles"></div>
         <div class="story-container">
-            <div class="chapter-badge slide-left">
-                <span class="chapter-badge-number">01</span>
+            <div class="chapter-header slide-left">
+                <div class="chapter-badge"><span>01</span></div>
+                <div class="chapter-meta">
+                    <div class="chapter-label">Chapter I</div>
+                    <h2 class="story-title glowing-text">The Beginning</h2>
+                </div>
             </div>
-            <div class="chapter-number slide-left">Chapter I</div>
-            <h2 class="story-title slide-left glowing-text">The Beginning</h2>
             <div class="story-content">
                 <div class="story-image-wrapper slide-right">
                     <div class="image-frame tilt-card">
+                        <div class="image-border-glow"></div>
                         <img src="images/chapter_beginning.png" alt="The night we met" class="story-image" loading="lazy">
-                        <div class="image-glow"></div>
                         <div class="image-shimmer"></div>
+                        <div class="image-vignette"></div>
+                    </div>
+                    <div class="image-reflection">
+                        <img src="images/chapter_beginning.png" alt="" class="reflection-img" loading="lazy">
                     </div>
                 </div>
                 <div class="story-text slide-left">
                     <p class="story-quote">"Some souls just understand each other upon meeting."</p>
-                    <p>It was a cold December night when our paths crossed — December 16, 2025. The kind of night where the universe seems to hold its breath, knowing something beautiful is about to begin.</p>
+                    <p>It was a cold December night when our paths crossed — <em>December 16, 2025.</em> The kind of night where the universe seems to hold its breath, knowing something beautiful is about to begin.</p>
                     <p>Maybe it was the way you smiled, or the way your eyes lit up when you laughed. Whatever it was, something deep inside me whispered: <em>"Pay attention. This one is special."</em></p>
                     <p>And just like that, my world changed forever.</p>
                 </div>
@@ -146,27 +187,35 @@
         </div>
     </section>
 
-    <!-- ====== TRANSITION QUOTE 2 ====== -->
-    <div class="transition-quote" data-symbol="♡">
-        <p class="tq-text reveal-text">"Something changed inside me that day..."</p>
+    <!-- TRANSITION 2 -->
+    <div class="transition-section" data-symbol="♡">
+        <div class="transition-line"></div>
+        <p class="transition-text reveal-text">"Something changed inside me that day..."</p>
+        <div class="transition-line"></div>
     </div>
 
-    <!-- ===================== CHAPTER 2: THE FIRST SPARK ===================== -->
-    <section class="section story-section" id="section-2">
-        <div class="section-bg" style="background: linear-gradient(135deg, #1a0030 0%, #2d1045 50%, #3d1155 100%);"></div>
+    <!-- ===================== CHAPTER 2 ===================== -->
+    <section class="section story-section" id="section-2" data-accent="255, 150, 200">
+        <div class="section-bg" style="background: linear-gradient(160deg, #12082a 0%, #2B1055 40%, #1a0a3a 100%);"></div>
         <div class="section-particles"></div>
         <div class="story-container">
-            <div class="chapter-badge slide-right">
-                <span class="chapter-badge-number">02</span>
+            <div class="chapter-header slide-right">
+                <div class="chapter-badge"><span>02</span></div>
+                <div class="chapter-meta">
+                    <div class="chapter-label">Chapter II</div>
+                    <h2 class="story-title glowing-text">The First Spark</h2>
+                </div>
             </div>
-            <div class="chapter-number slide-right">Chapter II</div>
-            <h2 class="story-title slide-right glowing-text">The First Spark</h2>
             <div class="story-content reverse">
                 <div class="story-image-wrapper slide-left">
                     <div class="image-frame tilt-card">
+                        <div class="image-border-glow"></div>
                         <img src="images/chapter_first_spark.png" alt="The first spark between us" class="story-image" loading="lazy">
-                        <div class="image-glow"></div>
                         <div class="image-shimmer"></div>
+                        <div class="image-vignette"></div>
+                    </div>
+                    <div class="image-reflection">
+                        <img src="images/chapter_first_spark.png" alt="" class="reflection-img" loading="lazy">
                     </div>
                 </div>
                 <div class="story-text slide-right">
@@ -179,27 +228,35 @@
         </div>
     </section>
 
-    <!-- ====== TRANSITION QUOTE 3 ====== -->
-    <div class="transition-quote" data-symbol="∞">
-        <p class="tq-text reveal-text">"And then I knew... this was love."</p>
+    <!-- TRANSITION 3 -->
+    <div class="transition-section" data-symbol="∞">
+        <div class="transition-line"></div>
+        <p class="transition-text reveal-text">"And then I knew... this was love."</p>
+        <div class="transition-line"></div>
     </div>
 
-    <!-- ===================== CHAPTER 3: FALLING IN LOVE ===================== -->
-    <section class="section story-section" id="section-3">
-        <div class="section-bg" style="background: linear-gradient(135deg, #2d1045 0%, #4a1942 50%, #1a0030 100%);"></div>
+    <!-- ===================== CHAPTER 3 ===================== -->
+    <section class="section story-section" id="section-3" data-accent="255, 180, 220">
+        <div class="section-bg" style="background: linear-gradient(160deg, #1a0a3a 0%, #3a1055 40%, #200a40 100%);"></div>
         <div class="section-particles"></div>
         <div class="story-container">
-            <div class="chapter-badge slide-left">
-                <span class="chapter-badge-number">03</span>
+            <div class="chapter-header slide-left">
+                <div class="chapter-badge"><span>03</span></div>
+                <div class="chapter-meta">
+                    <div class="chapter-label">Chapter III</div>
+                    <h2 class="story-title glowing-text">Falling in Love</h2>
+                </div>
             </div>
-            <div class="chapter-number slide-left">Chapter III</div>
-            <h2 class="story-title slide-left glowing-text">Falling in Love</h2>
             <div class="story-content">
                 <div class="story-image-wrapper slide-right">
                     <div class="image-frame tilt-card">
+                        <div class="image-border-glow"></div>
                         <img src="images/chapter_falling_love.png" alt="Falling deeply in love" class="story-image" loading="lazy">
-                        <div class="image-glow"></div>
                         <div class="image-shimmer"></div>
+                        <div class="image-vignette"></div>
+                    </div>
+                    <div class="image-reflection">
+                        <img src="images/chapter_falling_love.png" alt="" class="reflection-img" loading="lazy">
                     </div>
                 </div>
                 <div class="story-text slide-left">
@@ -212,27 +269,35 @@
         </div>
     </section>
 
-    <!-- ====== TRANSITION QUOTE 4 ====== -->
-    <div class="transition-quote" data-symbol="🌱">
-        <p class="tq-text reveal-text">"Together, we became something beautiful..."</p>
+    <!-- TRANSITION 4 -->
+    <div class="transition-section" data-symbol="🌱">
+        <div class="transition-line"></div>
+        <p class="transition-text reveal-text">"Together, we became something beautiful..."</p>
+        <div class="transition-line"></div>
     </div>
 
-    <!-- ===================== CHAPTER 4: GROWING TOGETHER ===================== -->
-    <section class="section story-section" id="section-4">
-        <div class="section-bg" style="background: linear-gradient(135deg, #0d1b3e 0%, #1a3a2a 50%, #2d4a1a 100%);"></div>
+    <!-- ===================== CHAPTER 4 ===================== -->
+    <section class="section story-section" id="section-4" data-accent="150, 220, 180">
+        <div class="section-bg" style="background: linear-gradient(160deg, #0B1B2B 0%, #102a1a 40%, #0a1a2a 100%);"></div>
         <div class="section-particles"></div>
         <div class="story-container">
-            <div class="chapter-badge slide-right">
-                <span class="chapter-badge-number">04</span>
+            <div class="chapter-header slide-right">
+                <div class="chapter-badge"><span>04</span></div>
+                <div class="chapter-meta">
+                    <div class="chapter-label">Chapter IV</div>
+                    <h2 class="story-title glowing-text">Growing Together</h2>
+                </div>
             </div>
-            <div class="chapter-number slide-right">Chapter IV</div>
-            <h2 class="story-title slide-right glowing-text">Growing Together</h2>
             <div class="story-content reverse">
                 <div class="story-image-wrapper slide-left">
                     <div class="image-frame tilt-card">
+                        <div class="image-border-glow"></div>
                         <img src="images/chapter_growing.png" alt="Growing together" class="story-image" loading="lazy">
-                        <div class="image-glow"></div>
                         <div class="image-shimmer"></div>
+                        <div class="image-vignette"></div>
+                    </div>
+                    <div class="image-reflection">
+                        <img src="images/chapter_growing.png" alt="" class="reflection-img" loading="lazy">
                     </div>
                 </div>
                 <div class="story-text slide-right">
@@ -245,27 +310,35 @@
         </div>
     </section>
 
-    <!-- ====== TRANSITION QUOTE 5 ====== -->
-    <div class="transition-quote" data-symbol="🌅">
-        <p class="tq-text reveal-text">"Every moment became an adventure..."</p>
+    <!-- TRANSITION 5 -->
+    <div class="transition-section" data-symbol="🌅">
+        <div class="transition-line"></div>
+        <p class="transition-text reveal-text">"Every moment became an adventure..."</p>
+        <div class="transition-line"></div>
     </div>
 
-    <!-- ===================== CHAPTER 5: OUR ADVENTURES ===================== -->
-    <section class="section story-section" id="section-5">
-        <div class="section-bg" style="background: linear-gradient(135deg, #2d1045 0%, #4a2010 50%, #3d1155 100%);"></div>
+    <!-- ===================== CHAPTER 5 ===================== -->
+    <section class="section story-section" id="section-5" data-accent="255, 180, 120">
+        <div class="section-bg" style="background: linear-gradient(160deg, #1a0a30 0%, #3a1a10 40%, #2a0a30 100%);"></div>
         <div class="section-particles"></div>
         <div class="story-container">
-            <div class="chapter-badge slide-left">
-                <span class="chapter-badge-number">05</span>
+            <div class="chapter-header slide-left">
+                <div class="chapter-badge"><span>05</span></div>
+                <div class="chapter-meta">
+                    <div class="chapter-label">Chapter V</div>
+                    <h2 class="story-title glowing-text">Our Adventures</h2>
+                </div>
             </div>
-            <div class="chapter-number slide-left">Chapter V</div>
-            <h2 class="story-title slide-left glowing-text">Our Adventures</h2>
             <div class="story-content">
                 <div class="story-image-wrapper slide-right">
                     <div class="image-frame tilt-card">
+                        <div class="image-border-glow"></div>
                         <img src="images/chapter_adventures.png" alt="Our adventures together" class="story-image" loading="lazy">
-                        <div class="image-glow"></div>
                         <div class="image-shimmer"></div>
+                        <div class="image-vignette"></div>
+                    </div>
+                    <div class="image-reflection">
+                        <img src="images/chapter_adventures.png" alt="" class="reflection-img" loading="lazy">
                     </div>
                 </div>
                 <div class="story-text slide-left">
@@ -278,63 +351,72 @@
         </div>
     </section>
 
-    <!-- ====== TRANSITION QUOTE 6 ====== -->
-    <div class="transition-quote" data-symbol="💫">
-        <p class="tq-text reveal-text">"And so I promise you... forever."</p>
+    <!-- TRANSITION 6 -->
+    <div class="transition-section" data-symbol="💫">
+        <div class="transition-line"></div>
+        <p class="transition-text reveal-text">"And so I promise you... forever."</p>
+        <div class="transition-line"></div>
     </div>
 
     <!-- ===================== CHAPTER 6: FOREVER ===================== -->
     <section class="section story-section final-section" id="section-6">
-        <div class="section-bg" style="background: linear-gradient(135deg, #0a0015 0%, #1a0040 30%, #2d1060 60%, #0a0015 100%);"></div>
+        <div class="section-bg" style="background: linear-gradient(160deg, #0B0B2B 0%, #1a0a40 30%, #2B1055 60%, #0B0B2B 100%);"></div>
         <canvas class="confetti-canvas" id="confettiCanvas"></canvas>
         <div class="section-particles"></div>
         <div class="story-container">
-            <div class="chapter-badge slide-left">
-                <span class="chapter-badge-number">∞</span>
+            <div class="chapter-header slide-left" style="justify-content:center; text-align:center;">
+                <div class="chapter-meta" style="text-align:center;">
+                    <div class="chapter-badge" style="margin:0 auto 12px;"><span>∞</span></div>
+                    <div class="chapter-label">Forever</div>
+                    <h2 class="story-title glowing-text">& Counting</h2>
+                </div>
             </div>
-            <div class="chapter-number slide-left">Forever</div>
-            <h2 class="story-title slide-left glowing-text">& Counting</h2>
             <div class="story-content final-content">
                 <div class="story-image-wrapper slide-up">
                     <div class="image-frame final-frame tilt-card">
+                        <div class="image-border-glow"></div>
                         <img src="images/chapter_forever.png" alt="Forever and always" class="story-image" loading="lazy">
-                        <div class="image-glow"></div>
                         <div class="image-shimmer"></div>
+                        <div class="image-vignette"></div>
                     </div>
                 </div>
                 <div class="story-text slide-up final-text">
                     <p class="story-quote final-quote">"I loved you yesterday. I love you today. I'll love you tomorrow. And every day after that."</p>
                     <p>Every single second of our days together has been painted with your love. And as this counter keeps ticking...</p>
-                    
-                    <!-- Mini Counter -->
                     <div class="mini-counter">
-                        <span class="mini-counter-value" id="miniDays">196</span>d
-                        <span class="mini-counter-value" id="miniHours">02</span>h
-                        <span class="mini-counter-value" id="miniMinutes">21</span>m
-                        <span class="mini-counter-value" id="miniSeconds">50</span>s
+                        <div class="mini-item"><span class="mini-counter-value" id="miniDays">196</span><small>d</small></div>
+                        <div class="mini-item"><span class="mini-counter-value" id="miniHours">02</span><small>h</small></div>
+                        <div class="mini-item"><span class="mini-counter-value" id="miniMinutes">24</span><small>m</small></div>
+                        <div class="mini-item"><span class="mini-counter-value" id="miniSeconds">12</span><small>s</small></div>
                     </div>
-                    
                     <p>...know that every tick is a heartbeat dedicated to you. Every second is a whisper that says <em>"I choose you."</em></p>
-                    <p class="final-declaration">This is not just our story so far.<br>This is the beginning of forever. 💕</p>
-                    
+                    <p class="final-declaration">This is not just our story so far.<br>This is the beginning of <span class="shimmer-word">forever.</span> 💕</p>
                     <div class="final-signature">
+                        <span class="sig-line"></span>
                         <span class="signature-text">With all my love,</span>
                         <span class="signature-heart">♥</span>
                         <span class="signature-text">Forever yours</span>
+                        <span class="sig-line"></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Background Music Toggle -->
+    <!-- MUSIC TOGGLE -->
     <button class="music-toggle" id="musicToggle" title="Toggle Music">
-        <svg class="music-icon" viewBox="0 0 24 24" width="20" height="20">
+        <div class="music-bars" id="musicBars">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <svg class="music-icon-svg" viewBox="0 0 24 24" width="18" height="18">
             <path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
             <circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
         </svg>
     </button>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
 
     <script src="script.js"></script>
 </body>
