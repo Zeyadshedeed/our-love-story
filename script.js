@@ -146,6 +146,19 @@ let confettiCanvas = null;
 let confettiCtx = null;
 const backToTop = document.getElementById('backToTop');
 
+/* Declared early so initAnimationsAndObservers() can call .disconnect() safely */
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            if (entry.target.classList.contains('story-image-wrapper')) {
+                entry.target.dataset.active = "true";
+            }
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
 /* ========================================================
    INITIALIZATION
    ======================================================== */
@@ -868,17 +881,7 @@ window.addEventListener('scroll', handleScrollEffects, { passive: true });
 /* ========================================================
    SCROLL REVEAL & IMAGE BREAKOUTS
    ======================================================== */
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            if (entry.target.classList.contains('story-image-wrapper')) {
-                entry.target.dataset.active = "true";
-            }
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
+/* revealObserver is declared near the top of the file (before applyConfig runs) */
 
 function handleImageBreakoutShift() {
     document.querySelectorAll('.story-image-wrapper[data-active="true"]').forEach(wrapper => {
