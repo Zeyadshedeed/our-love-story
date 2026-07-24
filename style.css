@@ -65,6 +65,8 @@ body { font-family: var(--font-body); background: var(--bg-deep); color: var(--t
     display: flex; align-items: center; justify-content: center;
     background: var(--bg-deep);
     backdrop-filter: blur(20px);
+    opacity: 1;
+    visibility: visible;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
