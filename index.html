@@ -11,29 +11,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- CINEMATIC SPLIT LOADING SCREEN -->
+    <!-- MINIMALIST ELEGANT LOADING SCREEN -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="loader-panel loader-panel-left" id="loaderPanelLeft"></div>
-        <div class="loader-panel loader-panel-right" id="loaderPanelRight"></div>
         <div class="loader-content" id="loaderContent">
-            <div class="loader-halo">
-                <svg class="loader-heart-svg" viewBox="0 0 100 100" width="120" height="120">
-                    <path class="loader-heart-path" d="M50 88 C25 65, 5 50, 5 30 A20 20 0 0 1 50 20 A20 20 0 0 1 95 30 C95 50, 75 65, 50 88Z" fill="none" stroke="url(#roseGrad)" stroke-width="1.5"/>
-                    <defs>
-                        <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="var(--rose)" />
-                            <stop offset="50%" stop-color="var(--rose-light)" />
-                            <stop offset="100%" stop-color="var(--gold)" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="loader-pulse-circle"></div>
-                <div class="loader-pulse-circle delay"></div>
-            </div>
+            <div class="loader-heart">♥</div>
+            <h2 class="loader-title">Our Love Story</h2>
             <div class="loader-messages" id="loaderMessage">Preparing our memories...</div>
             <div class="loader-progress-info">
-                <span class="loader-percentage" id="loaderPercentage">0%</span>
                 <div class="loader-bar"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+                <span class="loader-percentage" id="loaderPercentage">0%</span>
             </div>
         </div>
     </div>

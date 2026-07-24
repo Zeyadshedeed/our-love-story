@@ -184,7 +184,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     let progress = 0;
     const interval = setInterval(() => {
-        progress += Math.floor(Math.random() * 8) + 4;
+        progress += Math.floor(Math.random() * 12) + 8;
         
         if (progress >= 100) {
             progress = 100;
@@ -196,8 +196,8 @@ window.addEventListener('DOMContentLoaded', () => {
             
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
-                setTimeout(startHeroAnimations, 800);
-            }, 800);
+                setTimeout(startHeroAnimations, 400);
+            }, 400);
         } else {
             if (percentEl) percentEl.textContent = `${progress}%`;
             if (fillEl) fillEl.style.width = `${progress}%`;
@@ -205,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const msgIndex = Math.min(messages.length - 1, Math.floor(progress / 20));
             if (messageEl) messageEl.textContent = messages[msgIndex];
         }
-    }, 120);
+    }, 60);
 
     // 4. Bind Customizer Dashboard Events
     initCustomizerEvents();
