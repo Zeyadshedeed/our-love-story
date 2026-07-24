@@ -241,12 +241,7 @@ function applyConfig() {
     // 2. Set Hero Tagline
     const heroTaglineEl = document.querySelector('.hero-tagline');
     if (heroTaglineEl) {
-        const words = appConfig.heroTagline.split(' ');
-        let taglineHtml = '';
-        words.forEach((word, idx) => {
-            taglineHtml += `<span class="tagline-word" style="--i:${idx}">${word}</span> `;
-        });
-        heroTaglineEl.innerHTML = taglineHtml;
+        heroTaglineEl.textContent = appConfig.heroTagline;
     }
 
     // 3. Set Color Theme CSS Variables

@@ -271,7 +271,7 @@ body { font-family: var(--font-body); background: var(--bg-deep); color: var(--t
 /* ========================================================
    HERO SECTION
    ======================================================== */
-.hero-section { text-align: center; padding: 40px 20px; background: var(--bg-deep); }
+.hero-section { text-align: center; padding: 60px 20px; background: var(--bg-deep); }
 .hero-gradient-mesh {
     position: absolute; inset: 0; z-index: 0;
     background:
@@ -284,7 +284,17 @@ body { font-family: var(--font-body); background: var(--bg-deep); color: var(--t
 .hero-particle { position: absolute; border-radius: 50%; animation: twinkle ease-in-out infinite; }
 @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.5); } }
 
-.hero-content { position: relative; z-index: 10; max-width: 800px; }
+.hero-content { position: relative; z-index: 10; max-width: 700px; }
+
+/* Simple heart icon */
+.hero-simple-heart {
+    display: block;
+    font-size: 2.8rem;
+    color: var(--rose);
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 16px rgba(207, 156, 180, 0.55));
+    animation: heartbeat 1.8s ease-in-out infinite;
+}
 
 /* Hero badge */
 .hero-badge { position: relative; width: 80px; height: 80px; margin: 0 auto 16px; }
@@ -365,12 +375,18 @@ body { font-family: var(--font-body); background: var(--bg-deep); color: var(--t
 @keyframes heartbeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.35); } 30% { transform: scale(1); } 45% { transform: scale(1.2); } 60% { transform: scale(1); } }
 
 /* Tagline word-by-word */
-.hero-tagline { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; letter-spacing: 1px; margin-bottom: 40px; }
-.tagline-word {
-    display: inline-block; opacity: 0; transform: translateY(10px);
-    transition: all 0.5s ease; transition-delay: calc(var(--i) * 0.08s);
+.hero-tagline {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.8s ease 0.6s;
 }
-.hero-tagline.visible .tagline-word { opacity: 1; transform: translateY(0); }
+.hero-tagline.visible { opacity: 1; transform: translateY(0); }
 
 /* ========================================================
    COUNTER
